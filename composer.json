@@ -1,0 +1,15 @@
+{
+  "type": "project",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.3.0",
+    "getkirby/cms": "^5.0",
+    "arnoson/kirby-vite": "^5.4.0",
+    "johannschopplich/kirbylog": "^1.4"
+  },
+  "config": {
+    "allow-plugins": {
+      "getkirby/composer-installer": true
+    }
+  }
+}
