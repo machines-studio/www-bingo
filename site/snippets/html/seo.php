@@ -4,7 +4,7 @@
 <link rel='apple-touch-icon' sizes='180x180' href='/assets/favicons/apple-touch-icon.png' />
 <meta name='apple-mobile-web-app-title' content='machines.studio' />
 <link rel='manifest' href='/assets/favicons/site.webmanifest' />
-<meta name='theme-color' content='#e4e4e4' />
+<meta name='theme-color' content='#ffffff' />
 
 <?php foreach ($kirby->languages() as $language) : ?>
   <link rel='alternate' hreflang='<?= $language->code() ?>' href='<?= $page->url($language->code()) ?>' />

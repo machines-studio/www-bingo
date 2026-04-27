@@ -61,6 +61,7 @@ main[data-barba-namespace='project'] {
 
     > .prose {
       padding-right: var(--space-2);
+      max-width: 65ch;
     }
 
     aside li {
