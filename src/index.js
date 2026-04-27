@@ -9,11 +9,13 @@ import mediaReady from '/utils/media-ready'
 
     components: {
       // Outside barba wrapper
-      global: [],
+      global: [
+        await import('/components/Menu')
+      ],
 
       // Inside barba wrapper
       local: [
-        await import('/components/Hello'),
+        await import('/components/Gallery')
       ]
     },
 

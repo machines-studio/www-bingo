@@ -1,0 +1,34 @@
+.card {
+  @include easing(color);
+
+  &:hover,
+  &:focus-within {
+    color: var(--color-page);
+  }
+
+  > a {
+    display: grid;
+    align-items: end;
+    grid-template-columns: column-span(6) column-span(2);
+    gap: var(--space-gutter);
+    padding-block: var(--space-3) var(--space-gutter);
+
+    border-bottom: var(--border);
+  }
+
+  &__title {
+    @include font('h1');
+    width: column-span(5);
+
+    &::before {
+      @include font('h2');
+      content: attr(data-number);
+      display: block;
+      opacity: var(--fade);
+    }
+  }
+
+  figure {
+    align-self: stretch;
+  }
+}

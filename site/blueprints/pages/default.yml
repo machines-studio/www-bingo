@@ -2,3 +2,5 @@ title: Page par défaut
 
 fields:
   text: fields/writer
+  color: fields/color
+  metas: fields/metas

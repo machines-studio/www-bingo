@@ -1,1 +1,24 @@
-Title: Titre du site
+Title: Élodie Bingo
+
+----
+
+Contact:
+
+left: '<p>Bazaar St So – dock 5 <br>292 Rue Camille Guérin <br>59000 LILLE</p>'
+right: '<p><a href="tel:+33788347419">07 88 34 74 19</a><br><a href="mailto:studio@elodiebingo.com">studio@elodiebingo.com</a></p>'
+
+----
+
+Instagram: elodie_bingo
+
+----
+
+Linkedin: elodie_bingo
+
+----
+
+Email: contact@example.com
+
+----
+
+Footer: © (date: year) Studio Élodie Bingo

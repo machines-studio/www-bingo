@@ -1,21 +1,55 @@
 @font-face {
-  font-family: your-font; // wrap in single quotes if spaces in the name
+  font-family: sohne;
   font-display: auto;
   font-style: normal;
   font-weight: normal;
   src:
-    url('/assets/your-font-regular.woff2') format('woff2'),
-    url('/assets/your-font-regular.woff') format('woff'),
-    url('/assets/your-font-regular.otf') format('opentype');
+    url('/assets/sohnebreit-halbfett.woff2') format('woff2'),
+    url('/assets/sohnebreit-halbfett.woff') format('woff'),
+    url('/assets/sohnebreit-halbfett.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: your-font; // wrap in single quotes if spaces in the name
+  font-family: sohne-trim;
+  font-display: auto;
+  font-style: normal;
+  font-weight: normal;
+  descent-override: 0%;
+  src:
+    url('/assets/sohnebreit-halbfett.woff2') format('woff2'),
+    url('/assets/sohnebreit-halbfett.woff') format('woff'),
+    url('/assets/sohnebreit-halbfett.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: poppins;
+  font-display: auto;
+  font-style: italic;
+  font-weight: normal;
+  src:
+    url('/assets/poppins-italic.woff2') format('woff2'),
+    url('/assets/poppins-italic.woff') format('woff'),
+    url('/assets/poppins-italic.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: poppins;
+  font-display: auto;
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url('/assets/poppins-regular.woff2') format('woff2'),
+    url('/assets/poppins-regular.woff') format('woff'),
+    url('/assets/poppins-regular.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: poppins;
   font-display: auto;
   font-style: normal;
   font-weight: bold;
   src:
-    url('/assets/your-font-bold.woff2') format('woff2'),
-    url('/assets/your-font-bold.woff') format('woff'),
-    url('/assets/your-font-bold.otf') format('opentype');
+    url('/assets/poppins-bold.woff2') format('woff2'),
+    url('/assets/poppins-bold.woff') format('woff'),
+    url('/assets/poppins-bold.ttf') format('opentype');
 }

@@ -1,0 +1,59 @@
+:root {
+  --menu-height: 5.4rem;
+
+  --menu-logo-font-family: sohne, sans-serif;
+  --menu-logo-font-size: var(--menu-font-size);
+  --menu-logo-text-transform: uppercase;
+  --menu-logo-letter-spacing: 8%;
+  --menu-logo-line-height: var(--menu-line-height);
+}
+
+.menu {
+  @include no-select;
+
+  position: fixed;
+  z-index: var(--z-menu);
+  inset: 0 0 auto;
+
+  justify-content: space-between;
+  padding: var(--space-gutter);
+  overflow: hidden;
+
+  background: var(--color-white);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: auto var(--space-gutter) 0;
+    border-bottom: var(--border);
+  }
+
+  &, &__links, .flexgroup {
+    display: flex;
+    gap: var(--space-2);
+  }
+
+  a {
+    @include font('menu');
+    @include easing(opacity);
+    position: relative;
+    display: block;
+    white-space: nowrap;
+
+    &::after {
+      @include hitbox(var(--space-gutter));
+    }
+
+    &[href*='colorlab'] {
+      text-transform: initial;
+    }
+  }
+
+  h1 a {
+    @include font('menu-logo');
+  }
+
+  &__links:has(.is-active, :hover) &__link:not(:has(.is-active, :hover)) a {
+    opacity: var(--fade);
+  }
+}

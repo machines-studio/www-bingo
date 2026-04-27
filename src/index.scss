@@ -4,32 +4,72 @@
 
 :root {
   --color-white: #FFF;
-  --color-black: #222;
+  --color-black: #333;
+  --color-page: var(--color-black);
 
-  --space-gutter: 2rem;
+  --fade: 0.3;
+  --easing: 300ms;
+  --easing-slow: 600ms;
+  --border: 1px solid;
+  --border-radius: 0.3rem;
 
-  --body-font-family: system-ui, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
-  --body-font-size: 1.8rem;
-  --body-line-height: 130%;
+  --space-0: 1rem;
+  --space-1: 2rem;
+  --space-2: 3rem;
+  --space-3: 6rem;
+  --space-4: 10rem;
+  --space-gutter: var(--space-1);
+
+  --z-menu: 1;
+
+  --menu-font-size: 1.4rem;
+  --menu-text-transform: lowercase;
+  --menu-line-height: 100%;
+
+  --h1-font-family: sohne-trim, sans-serif;
+  --h1-font-size: 7.2rem;
+  --h1-letter-spacing: 1%;
+  --h1-line-height: 96%;
+
+  --h2-font-family: sohne, sans-serif;
+  --h2-font-size: 3.6rem;
+  --h2-line-height: 102%;
+
+  --body-font-family: poppins, sans-serif;
+  --body-font-size: 2.2rem;
+  --body-line-height: 125%;
   --body-text-decoration-thickness: 1px;
   --body-text-underline-offset: 0.2em;
 
-  --title-font-size: 4.0rem;
-  --title-font-weight: 700;
+  --ui-font-size: 1.4rem;
+  --ui-text-transform: lowercase;
+}
 
-  @include mobile {
-    --title-font-size: 6.0rem;
-    --body-font-size: 2.2rem;
-  }
+/**
+ * Return the left offset of a column
+ */
+@function column-start ($col, $columns: 8, $width: 100vw) {
+  $column-width: calc(($width - var(--space-gutter)) / $columns);
+  @return calc(var(--space-gutter) + $column-width * $col); // stylelint-disable-line at-rule-empty-line-before
+}
 
-  @include retina {
-    --body-text-decoration-thickness: 15px;
-  }
+/**
+ * Return the width of a column span
+ */
+@function column-span ($col, $columns: 8, $width: 100vw) {
+  $column-width: calc(($width - var(--space-gutter)) / $columns);
+  @return calc($column-width * $col - var(--space-gutter)); // stylelint-disable-line at-rule-empty-line-before
 }
 
 /* stylelint-disable no-invalid-position-at-import-rule */
 
 @import '/style/base';
-@import '/components/Article';
-@import '/components/Hello';
+@import '/components/Card';
+@import '/components/Contact';
+@import '/components/Footer';
+@import '/components/Gallery';
+@import '/components/Menu';
 @import '/views/default';
+@import '/views/home';
+@import '/views/project';
+@import '/views/projects';

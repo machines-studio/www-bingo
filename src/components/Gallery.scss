@@ -1,0 +1,26 @@
+:root {
+  --gallery-height: 70rem;
+  --gallery-spacing: var(--space-gutter);
+  --gallery-size: 100%;
+}
+
+.gallery {
+  overflow: hidden;
+
+  ul {
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+    margin-left: calc(var(--gallery-spacing) * -1);
+  }
+
+  li {
+    flex: 0 0 auto;
+    min-width: 0;
+    padding-left: var(--gallery-spacing);
+    transform: translate3d(0, 0, 0);
+  }
+
+  figure {
+    height: var(--gallery-height);
+  }
+}

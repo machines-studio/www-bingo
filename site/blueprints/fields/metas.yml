@@ -1,0 +1,6 @@
+type: structure
+
+fields:
+  label:
+    type: text
+  text: fields/text

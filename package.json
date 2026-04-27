@@ -34,6 +34,8 @@
   "dependencies": {
     "@barba/core": "^2.10.0",
     "@barba/prefetch": "^2.2.0",
+    "embla-carousel": "^8.6.0",
+    "embla-carousel-wheel-gestures": "^8.1.0",
     "lozad": "^1.16.0"
   }
 }

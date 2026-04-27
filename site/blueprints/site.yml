@@ -3,3 +3,10 @@ title: Site
 sections:
   pages:
     type: pages
+
+fields:
+  contact:
+    type: object
+    fields:
+      left: fields/writer
+      right: fields/writer
