@@ -1,6 +1,21 @@
-title: Page par défaut
+title: Article
 
-fields:
-  text: fields/writer
-  color: fields/color
-  metas: fields/metas
+columns:
+  left:
+    width: 2/3
+    fields:
+      subtitle:
+        label: Sous-titre
+        extends: fields/text
+
+      layout: fields/layout
+
+  right:
+    width: 1/3
+    sections:
+      fields:
+        type: fields
+        fields:
+          color: fields/color
+
+      files: sections/files

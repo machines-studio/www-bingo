@@ -6,7 +6,13 @@ export const selector = '.gallery'
 export function hydrate (element) {
   const embla = EmblaCarousel(element, {
     container: element.querySelector('ul'),
-    dragFree: true
+    dragFree: true,
+
+    breakpoints: {
+      '(max-width: 800px)': {
+        active: false
+      }
+    }
   }, [
     EmblaWheel({ forceWheelAxis: 'x' }) // ??? y
   ])

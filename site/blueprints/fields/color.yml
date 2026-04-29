@@ -1,1 +1,6 @@
-type: color
+label: Couleur
+help: Le <a href='https://accessibleweb.com/color-contrast-checker/' target='_blank'>WCAG</a> conseille un contraste d’accessibilité de niveau <strong>AA</strong> minimum, <strong>AAA</strong> recommandé.
+
+type: colors
+contrast:
+  - '#FFF'

@@ -59,6 +59,7 @@
       a {
         @include font('h1');
         text-transform: lowercase;
+        &::after { content: unset; } // Disable bigger hitbox
       }
     }
   }

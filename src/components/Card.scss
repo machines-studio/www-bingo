@@ -22,11 +22,11 @@
   }
 
   &__title {
-    @include font('h1');
+    @include font('h2');
     width: column-span(5);
 
     &::before {
-      @include font('h2');
+      @include font('h3');
       content: attr(data-number);
       display: block;
       opacity: var(--fade);

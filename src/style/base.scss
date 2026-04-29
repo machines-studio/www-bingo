@@ -1,10 +1,6 @@
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 html {
   scroll-behavior: smooth;
+  scroll-padding: calc(var(--menu-height) + var(--space-gutter) - 1px);
   scrollbar-gutter: stable;
   min-height: 100%;
 }
@@ -41,12 +37,11 @@ main {
   flex: 1;
   padding: var(--space-gutter);
   margin-top: var(--menu-height);
-  animation: fade-in var(--easing-slow) cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 }
 
 ::selection {
-  color: var(--color-black);
-  background: var(--color-page);
+  color: contrast-color(var(--color-page, var(--color-black)));
+  background: var(--color-page, var(--color-black));
 }
 
 a {
@@ -89,6 +84,12 @@ figure {
   img[data-photoswipe] {
     cursor: pointer;
     cursor: zoom-in;
+  }
+
+  figcaption {
+    @include font('small');
+    margin-block: var(--space-0);
+    // opacity: var(--fade); // ???
   }
 
   figcaption:empty {

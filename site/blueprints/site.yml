@@ -1,12 +1,21 @@
 title: Site
 
-sections:
-  pages:
-    type: pages
+columns:
+  left:
+    width: 1/2
+    sections:
+      pages: sections/pages
 
-fields:
-  contact:
-    type: object
+  right:
+    width: 1/2
     fields:
-      left: fields/writer
-      right: fields/writer
+      contact:
+        type: object
+        fields:
+          left: fields/writer
+          right: fields/writer
+
+      footer:
+        label: Footer
+        extends: fields/writer
+        inline: true

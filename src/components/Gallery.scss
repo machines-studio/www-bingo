@@ -10,6 +10,12 @@
     display: flex;
     touch-action: pan-y pinch-zoom;
     margin-left: calc(var(--gallery-spacing) * -1);
+
+    @include mobile {
+      flex-direction: column;
+      gap: var(--gallery-spacing);
+      margin-left: 0;
+    }
   }
 
   li {
@@ -17,9 +23,17 @@
     min-width: 0;
     padding-left: var(--gallery-spacing);
     transform: translate3d(0, 0, 0);
+
+    @include mobile {
+      padding-left: 0;
+    }
   }
 
   figure {
     height: var(--gallery-height);
+
+    @include mobile {
+      height: auto;
+    }
   }
 }

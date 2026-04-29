@@ -27,13 +27,18 @@
   --menu-line-height: 100%;
 
   --h1-font-family: sohne-trim, sans-serif;
-  --h1-font-size: 7.2rem;
+  --h1-font-size: 9.6rem;
   --h1-letter-spacing: 1%;
   --h1-line-height: 96%;
 
-  --h2-font-family: sohne, sans-serif;
-  --h2-font-size: 3.6rem;
-  --h2-line-height: 102%;
+  --h2-font-family: sohne-trim, sans-serif;
+  --h2-font-size: 7.2rem;
+  --h2-letter-spacing: 1%;
+  --h2-line-height: 96%;
+
+  --h3-font-family: sohne, sans-serif;
+  --h3-font-size: 3.6rem;
+  --h3-line-height: 102%;
 
   --body-font-family: poppins, sans-serif;
   --body-font-size: 2.2rem;
@@ -44,6 +49,9 @@
   --ui-font-size: 1.4rem;
   --ui-text-transform: lowercase;
 
+  --small-font-size: 1.4rem;
+  --small-line-height: 125%;
+
   @include mobile {
     --h1-font-size: 3.2rem;
     --h2-font-size: 2.2rem;
@@ -51,6 +59,33 @@
     --menu-font-size: 1.4rem;
     --ui-font-size: 1.6rem;
   }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateX(-1rem); }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; transform: translateX(1rem); }
+}
+
+@mixin fade-in ($stagger: 0, $delay: 75ms) {
+  animation: fade-in var(--easing-slow) cubic-bezier(0.25, 0.1, 0.25, 1) both;
+
+  @if $stagger > 0 {
+    @for $i from 0 through $stagger {
+      &:nth-child(#{$i}) {
+        animation-delay: $i * $delay;
+      }
+    }
+  }
+}
+
+@mixin fade-out ($stagger: 0, $delay: 75ms) {
+  @include fade-in($stagger, $delay);
+  animation-name: fade-out;
 }
 
 /**
@@ -72,6 +107,7 @@
 /* stylelint-disable no-invalid-position-at-import-rule */
 
 @import '/style/base';
+@import '/components/Article';
 @import '/components/Card';
 @import '/components/Contact';
 @import '/components/Footer';

@@ -1,11 +1,19 @@
 main[data-barba-namespace='home'] {
-  > svg:first-child {
-    width: 100%;
-    height: auto;
-    margin-top: var(--space-3);
+  .splashcreen {
+    min-height: 60vh;
+    padding-top: var(--space-3);
 
-    @include mobile {
-      margin-top: 0;
+    svg {
+      width: 100%;
+      height: auto;
+
+      @include mobile {
+        margin-top: 0;
+      }
+
+      path {
+        @include fade-in(11, 50ms);
+      }
     }
   }
 }

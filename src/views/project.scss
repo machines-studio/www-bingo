@@ -1,70 +1,28 @@
 main[data-barba-namespace='project'] {
-  @include easing(color);
-  color: var(--color-page);
-
-  > header {
-    display: grid;
-    align-items: end; // ???
-    gap: var(--space-gutter);
-    padding-block: var(--space-3) var(--space-gutter);
-    border-bottom: var(--border);
-
-    h2 {
-      @include font('h1');
-      width: column-span(5);
-
-      &::before {
-        @include font('h2');
-        content: attr(data-number);
-        display: block;
-        opacity: var(--fade);
-      }
-    }
-
-    nav {
-      @include no-select;
-      @include font('h2');
-      position: absolute;
-      right: var(--space-gutter);
-      display: flex;
-      gap: var(--space-gutter);
-      font-family: sohne-trim, sans-serif;
-
-      a {
-        @include easing(opacity);
-        position: relative;
-
-        &::before {
-          @include hitbox;
-        }
-      }
-
-      [disabled],
-      &:has(:hover:not([disabled])) a:not(:hover) {
-        opacity: var(--fade);
-      }
-    }
-  }
-
-  > header + h3 {
+  .article__title {
     @include font('h2');
-    padding-bottom: var(--space-gutter);
-    margin-top: var(--space-gutter);
-    border-bottom: var(--border);
   }
 
-  > article {
-    display: grid;
-    grid-template-columns: column-span(5) column-span(3);
-    gap: var(--space-gutter);
+  .article__content {
     margin-top: var(--space-gutter);
 
-    > .prose {
-      padding-right: var(--space-2);
-      max-width: 65ch;
+    .text {
+      display: grid;
+      grid-template-columns: column-span(5) column-span(3);
+      gap: var(--space-gutter);
+
+      @include mobile {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+      }
     }
 
-    aside li {
+    .text .prose {
+      max-width: 65ch;
+      padding-right: var(--space-2);
+    }
+
+    .text aside li {
       @include font('ui');
       display: flex;
       justify-content: space-between;
@@ -81,9 +39,13 @@ main[data-barba-namespace='project'] {
         text-transform: initial;
       }
     }
-  }
 
-  > .gallery {
-    margin-top: var(--space-4);
+    .gallery {
+      margin-top: var(--space-4);
+
+      @include mobile {
+        margin-top: var(--space-3);
+      }
+    }
   }
 }
