@@ -109,6 +109,18 @@ return [
       }
     ],
 
+    [ // Load a playground in full page
+      'pattern' => '/(:any).playground',
+      'action' => function ($id) {
+        $slug = "$id.playground";
+        return new Page([
+          'slug' => $slug,
+          'content' => option("playgrounds.$slug"),
+          'template' => 'playground'
+        ]);
+      }
+    ],
+
     [ // Quick panel access from any page by appending /panel to the url
       'pattern' => '(:all)/panel',
       'action' => function ($uid) {
@@ -118,10 +130,29 @@ return [
     ]
   ],
 
-  'ready' => fn () => [
+  'ready' => fn ($kirby) => [
     'panel' => [
       'css' => vite()->panelCss('panel.js'),
       'js' => vite()->panelJs('panel.js')
-    ]
+    ],
+
+    // Generate a list of all snippets/playgrounds/*
+    'playgrounds' => (function () use ($kirby) {
+      $root = $kirby->root('snippets') . '/playgrounds';
+      $playgrounds = [];
+
+      foreach (Dir::files($root) as $file) {
+        if (F::extension($file) === 'php') {
+          $slug = F::name($file);
+          $json = Data::read("$root/$slug.json");
+
+          $playgrounds[$slug] = [
+            'title' => $json['title'],
+            'slug' => $slug
+          ];
+        }
+      }
+      return $playgrounds;
+    })(),
   ]
 ];

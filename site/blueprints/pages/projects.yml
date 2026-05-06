@@ -1,0 +1,9 @@
+icon: users
+
+sections:
+  drafts:
+    extends: sections/drafts
+    template: project
+  pages:
+    extends: sections/pages
+    status: published

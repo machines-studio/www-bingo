@@ -1,21 +1,24 @@
 title: Site
+extends: core
 
-columns:
-  left:
-    width: 1/2
-    sections:
-      pages: sections/pages
+tabs:
+  content:
+    columns:
+      left:
+        width: 1/2
+        sections:
+          pages: sections/pages
 
-  right:
-    width: 1/2
-    fields:
-      contact:
-        type: object
+      right:
+        width: 1/2
         fields:
-          left: fields/writer
-          right: fields/writer
+          contact:
+            type: object
+            fields:
+              left: fields/writer
+              right: fields/writer
 
-      footer:
-        label: Footer
-        extends: fields/writer
-        inline: true
+          footer:
+            label: Footer
+            extends: fields/writer
+            inline: true

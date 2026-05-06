@@ -8,6 +8,7 @@
   'symbol' => sprintf('%02d', $page->num()),
   'title' => $page->title(),
   'subtitle' => $page->subtitle(),
+  'layouts' => $page->layout()->toLayouts()
 ], slots: true) ?>
   <?php slot('nav') ?>
     <a <?= attr(['href' => $prev?->url(), 'disabled' => !$prev]) ?>>←</a>

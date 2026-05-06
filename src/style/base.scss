@@ -89,7 +89,7 @@ figure {
   figcaption {
     @include font('small');
     margin-block: var(--space-0);
-    // opacity: var(--fade); // ???
+    opacity: var(--fade);
   }
 
   figcaption:empty {

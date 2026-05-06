@@ -3,17 +3,21 @@
     @include fade-in(3);
   }
 
-  &__header {
-    display: grid;
-    align-items: end; // ???
+  header {
+    position: relative;
     gap: var(--space-gutter);
-    padding-block: var(--space-3) var(--space-gutter);
+    margin-block: var(--space-gutter);
     border-bottom: var(--border);
   }
 
-  &__title {
+  &__header {
+    padding-bottom: var(--space-gutter);
+  }
+
+  header h2,
+  header h3 {
     @include font('h1');
-    width: column-span(5);
+    width: column-span(6);
 
     @include narrow {
       width: column-span(7);
@@ -27,7 +31,7 @@
     }
   }
 
-  &__nav {
+  header nav {
     @include no-select;
     @include font('h3');
     position: absolute;
@@ -66,36 +70,49 @@
       margin-bottom: var(--space-gutter);
     }
 
-    [data-cols='2'] {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-gutter);
-    }
-
     [data-cols='1'] .prose {
       margin-inline: auto;
+
+      @include narrow {
+        margin-inline: unset;
+      }
     }
 
     [data-cols='1'] figure {
       margin-bottom: var(--space-2);
     }
 
+    [data-cols='2'] {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-gutter);
+
+      @include narrow {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    [data-cols='2'] .prose {
+      padding-right: var(--space-gutter);
+    }
+
     .prose {
       max-width: 65ch;
     }
 
-    h3 {
+    header h3 {
       @include font('h2');
-      padding-bottom: var(--space-gutter);
       margin-bottom: var(--space-gutter);
-      border-bottom: var(--border);
     }
 
-    h4 {
+    header h4 {
       @include font('h3');
-      padding-bottom: var(--space-gutter);
       margin-bottom: var(--space-gutter);
-      border-bottom: var(--border);
+    }
+
+    .columns:not(:first-child) header h3,
+    header:not(:first-child) {
+      margin-top: var(--space-3);
     }
 
     // TODO gallery block

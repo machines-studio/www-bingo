@@ -29,12 +29,12 @@ export function bootstrap ({
 
   const refs = new Set()
 
-  Barba.hooks.afterEnter(({ next }) => {
+  Barba.hooks.afterEnter(async ({ next }) => {
     try {
       // Hydrate all possible components, keeping a ref
       for (const { selector, hydrate } of components.local) {
         for (const el of next.container.querySelectorAll(selector)) {
-          refs.add(hydrate(el))
+          refs.add(await hydrate(el))
         }
       }
 

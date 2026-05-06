@@ -11,7 +11,7 @@
     align-items: end;
     grid-template-columns: column-span(6) column-span(2);
     gap: var(--space-gutter);
-    padding-block: var(--space-3) var(--space-gutter);
+    padding-block: var(--space-2) var(--space-gutter);
 
     border-bottom: var(--border);
 
@@ -24,6 +24,10 @@
   &__title {
     @include font('h2');
     width: column-span(5);
+
+    @include mobile {
+      width: auto;
+    }
 
     &::before {
       @include font('h3');

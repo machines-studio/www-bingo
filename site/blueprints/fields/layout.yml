@@ -10,7 +10,17 @@ selector:
   columns: 2
 
 fieldsets:
-  # WIP
-  - heading
-  - text
-  - image
+  text:
+    label: Texte
+    type: group
+    fieldsets:
+      - heading
+      - text
+
+  media:
+    label: Media
+    type: group
+    fieldsets:
+      - image
+      - video
+      - playground # WIP

@@ -1,0 +1,19 @@
+title: Playground
+icon: palette
+wysiwyg: true
+preview: fields
+fields:
+  playground:
+    type: select
+    options:
+      type: query
+      query: kirby.option('playgrounds')
+      text: "{{ item.title }}"
+      value: "{{ item.slug }}"
+
+  caption:
+    label: field.blocks.image.caption
+    type: writer
+    icon: text
+    inline: true
+

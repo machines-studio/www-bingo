@@ -1,1 +1,2 @@
 icon: home
+extends: pages/default

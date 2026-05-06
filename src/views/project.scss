@@ -41,9 +41,9 @@ main[data-barba-namespace='project'] {
     }
 
     .gallery {
-      margin-top: var(--space-4);
+      margin-top: var(--space-3);
 
-      @include mobile {
+      & + .columns {
         margin-top: var(--space-3);
       }
     }

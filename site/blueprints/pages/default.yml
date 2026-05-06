@@ -1,21 +1,16 @@
 title: Article
+extends: core
 
-columns:
-  left:
-    width: 2/3
+tabs:
+  content:
     fields:
       subtitle:
         label: Sous-titre
-        extends: fields/text
+        extends: fields/writer
+        width: 2/3
+
+      color:
+        extends: fields/color
+        width: 1/3
 
       layout: fields/layout
-
-  right:
-    width: 1/3
-    sections:
-      fields:
-        type: fields
-        fields:
-          color: fields/color
-
-      files: sections/files

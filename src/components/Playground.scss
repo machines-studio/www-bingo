@@ -1,0 +1,34 @@
+:root {
+  --playground-height: 50vh; // ???
+  --playground-background: #FAFAFA; // ???
+
+  --playground-font-size: 1.6rem;
+  --playground-text-underline-offset: var(--body-text-underline-offset);
+  --playground-text-decoration-thickness: var(--body-text-decoration-thickness);
+  --playground-text-decoration-skip-ink: var(--body-text-decoration-skip-ink);
+}
+
+.playground {
+  &__content {
+    @include font('playground');
+
+    display: grid;
+    place-items: center;
+    height: var(--playground-height);
+    background: var(--playground-background);
+    border-radius: var(--border-radius);
+  }
+
+  button {
+    all: unset;
+
+    text-decoration-line: underline;
+    text-underline-offset: inherit;
+    text-decoration-thickness: inherit;
+    text-decoration-color: currentcolor;
+
+    cursor: pointer;
+
+    // TODO juicy
+  }
+}
