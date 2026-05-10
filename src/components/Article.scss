@@ -1,4 +1,6 @@
 .article {
+  margin-bottom: var(--space-4);
+
   > * {
     @include fade-in(3);
   }
@@ -44,12 +46,9 @@
     font-family: sohne-trim, sans-serif;
 
     a {
+      @include hitbox;
       @include easing(opacity);
       position: relative;
-
-      &::before {
-        @include hitbox;
-      }
     }
 
     [disabled],

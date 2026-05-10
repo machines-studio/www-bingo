@@ -67,14 +67,11 @@
   a, label[for='toggle-menu'] {
     @include font('menu');
     @include easing(opacity);
+    @include hitbox(var(--space-gutter));
 
     position: relative;
     display: block;
     white-space: nowrap;
-
-    &::after {
-      @include hitbox(var(--space-gutter));
-    }
 
     &[href*='colorlab'] {
       text-transform: initial;

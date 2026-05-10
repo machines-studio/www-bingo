@@ -1,0 +1,41 @@
+:root {
+  --playground-groups-size: calc((#{column-span(6)} - var(--space-0) * 5 - var(--space-gutter) * 2) / 6);
+}
+
+.playground[data-slug='groups.playground'] {
+  .playground__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-gutter);
+  }
+
+  ul {
+    display: flex;
+    contain: layout;
+    gap: var(--space-0);
+  }
+
+  ul li {
+    @include easing((margin-inline, border-radius));
+    @include font('small');
+    display: grid;
+    place-items: center;
+    width: var(--playground-groups-size);
+    height: var(--playground-groups-size);
+
+    color: var(--contrast);
+
+    background: hsl(var(--h) var(--s) var(--l));
+    border-radius: var(--border-radius);
+
+    &.is-active {
+      margin-inline: var(--space-gutter);
+      border-radius: 100%;
+    }
+  }
+
+  button {
+    @include hitbox(var(--space-gutter));
+  }
+}

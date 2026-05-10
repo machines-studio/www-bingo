@@ -1,4 +1,21 @@
 title: Page référence
 extends: pages/default
 
-# WIP abstract, metas, gallery
+tabs:
+  content:
+    sections:
+      beforeContent:
+        type: fields
+        fields:
+          abstract:
+            label: Description du projet
+            extends: fields/writer
+
+          metas: fields/metas
+          gallery: fields/gallery
+
+      content:
+        fields:
+          layout:
+            label: Contenu rédactionnel supplémentaire
+            extends: fields/layout

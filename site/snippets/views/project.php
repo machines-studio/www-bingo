@@ -16,9 +16,9 @@
   <?php endSlot() ?>
 
   <?php slot('content') ?>
-    <section class='text'>
+    <section class='abstract'>
       <div class='prose'>
-        <?= $page->text()->kirbytext() ?>
+        <?= $page->abstract()->kirbytext() ?>
       </div>
 
       <aside>
@@ -34,7 +34,7 @@
     </section>
 
     <?php snippet('components/Gallery', [
-      'images' => $page->images() // TODO[panel]
+      'images' => $page->gallery()->toFiles()
     ]) ?>
   <?php endSlot() ?>
 <?php endsnippet() ?>

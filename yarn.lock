@@ -449,6 +449,13 @@
     estraverse "^5.3.0"
     picomatch "^4.0.2"
 
+"@tooooools/ui@2.0.0-alpha.1":
+  version "2.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@tooooools/ui/-/ui-2.0.0-alpha.1.tgz#7dd03a25e2aeb76a56e5f07a546f504e2845ec75"
+  integrity sha512-5eC7UV28jwUYw61SgHoUWJ2DgnIpeh9HAWhwbmzpdCEI0lngynsTsOy63gDvTjLyaQhpWFxBN410wAcP9V4QBQ==
+  dependencies:
+    debounce "^1.2.1"
+
 "@tybys/wasm-util@^0.9.0":
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/@tybys/wasm-util/-/wasm-util-0.9.0.tgz#3e75eb00604c8d6db470bf18c37b7d984a0e3355"
@@ -1278,6 +1285,11 @@ date-fns@^2.30.0:
   integrity sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==
   dependencies:
     "@babel/runtime" "^7.21.0"
+
+debounce@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/debounce/-/debounce-1.2.1.tgz#38881d8f4166a5c5848020c11827b834bcb3e0a5"
+  integrity sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==
 
 debug@2.6.9, debug@^2.2.0:
   version "2.6.9"
@@ -2921,6 +2933,11 @@ minimist-options@4.1.0:
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/minipass/-/minipass-7.1.2.tgz#93a9626ce5e5e66bd4db86849e7515e92340a707"
   integrity sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==
+
+missing-math@^3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/missing-math/-/missing-math-3.5.1.tgz#841f8dcf1eec23d6d6855a014f9244e6ba8f300b"
+  integrity sha512-YmpBLPgbUjX5YWs7vz+GWvRUrrR4x2ieIky8cN1V7+UUFFAXGIUculxWUkkCpPHHREkYmvj26phABKdjXnMxLA==
 
 mitt@^1.1.3:
   version "1.2.0"

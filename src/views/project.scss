@@ -6,7 +6,7 @@ main[data-barba-namespace='project'] {
   .article__content {
     margin-top: var(--space-gutter);
 
-    .text {
+    .abstract {
       display: grid;
       grid-template-columns: column-span(5) column-span(3);
       gap: var(--space-gutter);
@@ -17,12 +17,12 @@ main[data-barba-namespace='project'] {
       }
     }
 
-    .text .prose {
+    .abstract .prose {
       max-width: 65ch;
       padding-right: var(--space-2);
     }
 
-    .text aside li {
+    .abstract aside li {
       @include font('ui');
       display: flex;
       justify-content: space-between;

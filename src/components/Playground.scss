@@ -10,13 +10,17 @@
 
 .playground {
   &__content {
+    @include no-select;
     @include font('playground');
 
     display: grid;
     place-items: center;
     height: var(--playground-height);
+
     background: var(--playground-background);
     border-radius: var(--border-radius);
+
+    contain: paint layout;
   }
 
   button {

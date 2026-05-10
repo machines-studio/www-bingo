@@ -16,11 +16,7 @@
 
   a {
     @include easing(opacity);
-    position: relative;
-
-    &::after {
-      @include hitbox(var(--space-gutter));
-    }
+    @include hitbox(var(--space-gutter));
   }
 
   &__links:has(.is-active, :hover) &__link:not(:has(.is-active, :hover)) a {

@@ -1,8 +1,5 @@
 .contact {
-  padding-top: var(--space-gutter);
   margin-inline: var(--space-gutter);
-  margin-top: var(--space-4);
-  border-top: var(--border);
 
   h3 {
     @include no-select;
