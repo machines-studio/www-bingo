@@ -1,2 +1,7 @@
 icon: home
 extends: pages/default
+
+tabs:
+  content:
+    sections:
+      main: false

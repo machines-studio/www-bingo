@@ -15,10 +15,14 @@ tabs:
           contact:
             type: object
             fields:
-              left: fields/writer
-              right: fields/writer
+              left:
+                label: Gauche
+                extends: fields/writer
+              right:
+                label: Droite
+                extends: fields/writer
 
           footer:
-            label: Footer
+            label: Pied de page
             extends: fields/writer
             inline: true
