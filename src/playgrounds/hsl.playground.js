@@ -1,6 +1,7 @@
 import { $ } from '@tooooools/ui/state'
+import Color from '/core/Color'
 
-export function hydrate (element, Color, console) {
+export function hydrate (element, console) {
   const [$h, $s, $l] = [
     [Color.$h, 'input[name="h"]'],
     [Color.$s, 'input[name="s"]'],

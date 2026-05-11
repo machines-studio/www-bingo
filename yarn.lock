@@ -301,6 +301,11 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/retry/-/retry-0.4.3.tgz#c2b9d2e374ee62c586d3adbea87199b1d7a7a6ba"
   integrity sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==
 
+"@internet/raf@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@internet/raf/-/raf-0.2.1.tgz#0b26a1acbf93885f8d67d0899c9df54657e7b59d"
+  integrity sha512-8ATSs0PSYkWKGro7PMvc09F2aO3qf+ydt0cuo1gQexMI6CD9Um0JcfnLpXtQOGL9Z6QS9dZbzuNMRj4vUM1Aug==
+
 "@isaacs/cliui@^8.0.2":
   version "8.0.2"
   resolved "https://registry.yarnpkg.com/@isaacs/cliui/-/cliui-8.0.2.tgz#b37667b7bc181c168782259bab42474fbf52b550"

@@ -11,6 +11,7 @@
 
 <figure <?= attr($attributes) ?>>
   <div class='playground__content'>
+    <canvas class='playground__cursor'></canvas>
     <?= trim($snippet) ? $snippet : $slug ?>
   </div>
 

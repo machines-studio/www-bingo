@@ -24,7 +24,7 @@
         "--l: {$l}%"
       ])
     ]) ?>>
-      <?= $name ?>
+      <span><?= $name ?></span>
     </li>
   <?php endforeach ?>
 </ul>

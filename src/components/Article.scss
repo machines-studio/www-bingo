@@ -65,7 +65,7 @@
   }
 
   &__content {
-    > * {
+    > *:not(:last-child) {
       margin-bottom: var(--space-gutter);
     }
 

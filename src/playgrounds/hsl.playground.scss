@@ -41,7 +41,6 @@
     @mixin thumb {
       width: var(--playground-hsl-cursor-thickness);
       height: var(--playground-hsl-cursor-size);
-      margin-block: calc(var(--playground-hsl-cursor-size) - var(--playground-hsl-cursor-thickness));
 
       background: var(--playground-hsl-cursor-color);
       border: 0;
