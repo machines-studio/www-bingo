@@ -9,6 +9,7 @@
 }
 
 .playground {
+  position: relative;
   touch-action: none;
 
   &__content {
@@ -42,14 +43,54 @@
     }
   }
 
-  button {
-    all: unset;
+  &__content > button {
+    @include font('small');
+    @include hitbox(var(--space-gutter));
+
+    cursor: pointer;
+
+    background: unset;
+    border: unset;
 
     text-decoration-line: underline;
     text-underline-offset: inherit;
     text-decoration-thickness: inherit;
     text-decoration-color: currentcolor;
+  }
 
-    cursor: pointer;
+  &__content > &__reset {
+    all: unset;
+    position: absolute;
+    top: var(--space-gutter);
+    right: var(--space-gutter);
+
+    &:hover svg {
+      opacity: 1;
+      transform: rotate(0.5turn);
+    }
+
+    &:active svg {
+      transform: rotate(0);
+    }
+
+    svg {
+      @include easing((opacity, transform));
+      width: var(--space-gutter);
+      height: auto;
+      opacity: var(--fade);
+
+      * {
+        stroke-width: 2px;
+      }
+    }
+  }
+
+  figcaption {
+    display: flex;
+    justify-content: space-between;
+
+    .readmore {
+      text-decoration-line: underline;
+    }
   }
 }

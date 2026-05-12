@@ -28,4 +28,4 @@
     </li>
   <?php endforeach ?>
 </ul>
-<button>générer une couleur aléatoire</button>
+<button class='generate'>générer une couleur aléatoire</button>

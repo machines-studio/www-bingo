@@ -8,7 +8,7 @@ const degreesDiff = (a, b, abs = true) => {
 
 export function hydrate (element, console) {
   const groups = Array.from(element.querySelectorAll('ul li'))
-  const btn = element.querySelector('button')
+  const btn = element.querySelector('button.generate')
 
   Color.$hsl.subscribe(update)
   btn.addEventListener('click', randomize)

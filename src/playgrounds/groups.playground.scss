@@ -68,8 +68,4 @@
       z-index: 1;
     }
   }
-
-  button {
-    @include hitbox(var(--space-gutter));
-  }
 }

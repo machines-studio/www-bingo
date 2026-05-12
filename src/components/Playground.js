@@ -40,8 +40,7 @@ export async function hydrate (element) {
   // TODO disable cursor on reduced motion
   const cursor = !IS_MOBILE && new Cursor(element)
 
-  // TODO scroll oob reset color
-  element.addEventListener('mouseleave', handleMouseLeave)
+  element.querySelector('.playground__reset')?.addEventListener('click', () => Color.reset())
 
   return {
     destroy: () => {
@@ -49,10 +48,6 @@ export async function hydrate (element) {
       cursor?.destroy?.()
       playground.destroy?.()
     }
-  }
-
-  function handleMouseLeave () {
-    Color.reset()
   }
 }
 
@@ -89,6 +84,7 @@ function Cursor (element) {
 
   return {
     destroy: () => {
+      Color.reset()
       raf.remove(tick)
 
       element.parentNode.removeEventListener('animationend', handleResize)

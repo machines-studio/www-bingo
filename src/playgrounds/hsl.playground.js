@@ -11,10 +11,7 @@ export function hydrate (element, console) {
     const $signal = $(input.value)
     input.value = $source.value
     input.addEventListener('input', () => { $signal.value = input.value })
-    $source.subscribe(v => {
-      input.value = v
-      $signal.value = v
-    })
+    $source.subscribe(v => { input.value = v })
     $signal.subscribe(update)
     return $signal
   })

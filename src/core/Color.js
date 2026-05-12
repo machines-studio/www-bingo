@@ -35,7 +35,7 @@ export default {
     $h.reset()
     $s.reset()
     $l.reset()
-    document.body.style.removeProperty(PROP)
+    setTimeout(() => document.body.style.removeProperty(PROP), 0)
   }
 }
 

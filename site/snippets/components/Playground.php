@@ -12,10 +12,16 @@
 <figure <?= attr($attributes) ?>>
   <div class='playground__content'>
     <canvas class='playground__cursor'></canvas>
+
+    <button title='Remettre à zéro' class='playground__reset'>
+      <?php snippet('svg/reset') ?>
+    </button>
+
     <?= trim($snippet) ? $snippet : $slug ?>
   </div>
 
-  <?php if ($caption) : ?>
-    <figcaption><?= $caption ?></figcaption>
-  <?php endif ?>
+  <figcaption>
+    <span><?= $caption ?></span>
+    <a href='<?= $slug ?>' class='readmore'>en savoir plus</a>
+  </figcaption>
 </figure>

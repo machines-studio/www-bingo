@@ -6,6 +6,7 @@ main[data-barba-namespace='home'] {
     svg {
       width: 100%;
       height: auto;
+      pointer-events: none; // Avoid <title> tooltip
 
       @include mobile {
         margin-top: 0;
