@@ -10,11 +10,7 @@
   }
 }
 
-.playground[data-slug='hsl.playground'] {
-  --playground-hsl-hue: 180deg;
-  --playground-hsl-saturation: 50%;
-  --playground-hsl-lightness: 50%;
-
+.playground[data-slug^='hsl.'] {
   section {
     flex: 1;
     display: flex;
@@ -74,17 +70,17 @@
 
   input[name='s'] {
     background: linear-gradient(to right,
-      hsl(var(--playground-hsl-hue) 0% 50%),
-      hsl(var(--playground-hsl-hue) 50% 50%),
-      hsl(var(--playground-hsl-hue) 100% 50%)
+      hsl(var(--playground-hue) 0% 50%),
+      hsl(var(--playground-hue) 50% 50%),
+      hsl(var(--playground-hue) 100% 50%)
     );
   }
 
   input[name='l'] {
     background: linear-gradient(to right,
-      hsl(var(--playground-hsl-hue) var(--playground-hsl-saturation) 0%),
-      hsl(var(--playground-hsl-hue) var(--playground-hsl-saturation) 50%),
-      hsl(var(--playground-hsl-hue) var(--playground-hsl-saturation) 100%)
+      hsl(var(--playground-hue) var(--playground-saturation) 0%),
+      hsl(var(--playground-hue) var(--playground-saturation) 50%),
+      hsl(var(--playground-hue) var(--playground-saturation) 100%)
     );
   }
 }

@@ -1,6 +1,6 @@
 :root {
-  --playground-height: 50vh; // ???
-  --playground-background: #FAFAFA; // ???
+  --playground-height: 50vh;
+  --playground-background: #FAFAFA;
 
   --playground-font-size: 1.6rem;
   --playground-text-underline-offset: var(--body-text-underline-offset);
@@ -18,9 +18,13 @@
 
     position: relative;
 
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-gutter);
     height: var(--playground-height);
+    min-height: column-span(1);
     cursor: crosshair;
 
     background: var(--playground-background);
@@ -44,10 +48,13 @@
   }
 
   &__content > button {
+    @include easing(color);
     @include font('small');
     @include hitbox(var(--space-gutter));
 
     cursor: pointer;
+
+    color: var(--color-page);
 
     background: unset;
     border: unset;
@@ -63,6 +70,11 @@
     position: absolute;
     top: var(--space-gutter);
     right: var(--space-gutter);
+    animation: reset-appears var(--easing-slow) cubic-bezier(0.25, 0.1, 0.25, 1) both;
+
+    body:not([style*='--color-page:']) & {
+      display: none;
+    }
 
     &:hover svg {
       opacity: 1;
@@ -93,4 +105,9 @@
       text-decoration-line: underline;
     }
   }
+}
+
+@keyframes reset-appears {
+  from { opacity: 0; transform: rotate(-1turn); }
+  to { opacity: 1; }
 }

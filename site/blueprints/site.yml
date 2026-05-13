@@ -3,26 +3,18 @@ extends: core
 
 tabs:
   content:
-    columns:
-      left:
-        width: 1/2
-        sections:
-          pages: sections/pages
-
-      right:
-        width: 1/2
+    fields:
+      contact:
+        type: object
         fields:
-          contact:
-            type: object
-            fields:
-              left:
-                label: Gauche
-                extends: fields/writer
-              right:
-                label: Droite
-                extends: fields/writer
-
-          footer:
-            label: Pied de page
+          left:
+            label: Gauche
             extends: fields/writer
-            inline: true
+          right:
+            label: Droite
+            extends: fields/writer
+
+      footer:
+        label: Pied de page
+        extends: fields/writer
+        inline: true

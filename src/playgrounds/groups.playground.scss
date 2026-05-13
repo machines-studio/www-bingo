@@ -9,13 +9,6 @@
 }
 
 .playground[data-slug='groups.playground'] {
-  .playground__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--space-gutter);
-  }
-
   ul {
     display: flex;
     contain: layout;

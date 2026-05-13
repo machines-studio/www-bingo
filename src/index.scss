@@ -137,8 +137,13 @@
 @import '/components/Gallery';
 @import '/components/Menu';
 @import '/components/Playground';
+@import '/playgrounds/environment.playground';
 @import '/playgrounds/groups.playground';
 @import '/playgrounds/hsl.playground';
+@import '/playgrounds/hsl.h.playground';
+@import '/playgrounds/hsl.l.playground';
+@import '/playgrounds/hsl.s.playground';
+@import '/playgrounds/size.playground';
 @import '/views/default';
 @import '/views/home';
 @import '/views/project';

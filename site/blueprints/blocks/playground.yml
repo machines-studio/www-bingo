@@ -5,15 +5,21 @@ preview: fields
 fields:
   playground:
     type: select
+    required: true
+    width: 1/2
     options:
       type: query
       query: kirby.option('playgrounds')
       text: "{{ item.title }}"
       value: "{{ item.slug }}"
 
+  page:
+    label: En savoir plus
+    extends: fields/page
+    width: 1/2
+
   caption:
     label: field.blocks.image.caption
     type: writer
     icon: text
     inline: true
-

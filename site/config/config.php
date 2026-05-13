@@ -43,47 +43,48 @@ return [
   ],
 
   'panel' => [
-    'menu' => fn ($kirby) => array_merge([
-      'site' => [
-        'label' => 'Site',
-        'icon' => 'smile',
-        'current' => function () : bool {
-          $links = ['site'];
-          $path  = Kirby\Cms\App::instance()->path();
-          return Str::contains($path, 'site');
-        }
+    'menu' => fn ($kirby) => array_merge(
+      [
+        'home' => menu($kirby, 'home')
       ],
-      'home' => menu($kirby, 'home')
-    ],
 
-    // Listed
-    (function () use ($kirby) {
-      $items = ['-'];
-      foreach ($kirby->site()->children()->listed() as $group) {
-        $id = $group->slug();
-        $items[$id] = menu($kirby, $id);
-      }
-      return $items;
-    })(),
+      // Listed
+      (function () use ($kirby) {
+        $items = ['-'];
+        foreach ($kirby->site()->children()->listed() as $group) {
+          $id = $group->slug();
+          $items[$id] = menu($kirby, $id);
+        }
+        return $items;
+      })(),
 
-    // Unlisted
-    (function () use ($kirby) {
-      $items = ['-'];
-      foreach ($kirby->site()->children()->unlisted() as $group) {
-        $id = $group->slug();
-        $items[$id] = menu($kirby, $id);
-      }
-      return $items;
-    })(),
+      // Unlisted
+      (function () use ($kirby) {
+        $items = ['-'];
+        foreach ($kirby->site()->children()->unlisted() as $group) {
+          $id = $group->slug();
+          $items[$id] = menu($kirby, $id);
+        }
+        return $items;
+      })(),
 
-    [
-      '-',
-      'users',
-      'matomo',
-      'retour',
-      'languages',
-      'system',
-    ])
+      [
+        '-',
+        'site' => [
+          'label' => 'Réglages',
+          'icon' => 'cog',
+          'current' => function () : bool {
+            $links = ['site'];
+            $path  = Kirby\Cms\App::instance()->path();
+            return Str::contains($path, 'site');
+          }
+        ],
+        'users',
+        'matomo',
+        'retour',
+        'languages',
+      ]
+    )
   ],
 
   'sitemap' => [

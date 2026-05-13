@@ -1,0 +1,46 @@
+:root {
+  --playground-environment-square-color: #cacaca;
+}
+
+.playground[data-slug='environment.playground'] {
+  .container,
+  .square {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+  }
+
+  section {
+    display: flex;
+    gap: var(--space-gutter);
+  }
+
+  .container {
+    @include easing(background);
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: column-span(3);
+    height: column-span(2);
+
+    background: var(--color-page);
+  }
+
+  .container:last-child::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: white;
+    mix-blend-mode: difference;
+  }
+
+  .square {
+    @include fade-in(6);
+    position: relative;
+    z-index: 1;
+    width: column-span(1);
+    height: column-span(1);
+    background: var(--playground-environment-square-color);
+  }
+}

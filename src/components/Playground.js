@@ -25,7 +25,7 @@ export async function hydrate (element) {
     const slug = element.dataset.slug
     if (!slug) return
     const seed = [...slug].reduce((h, c) => Math.imul(31, h) + c.charCodeAt(0) | 0, 0) >>> 0
-    const { log, warn, error } = logger(slug, 'black', `hsl(${Math.sin(seed) * 360}, 100%, 64%)`)
+    const { log, warn, error } = logger(slug, 'black', `hsl(${Math.sin(seed ** 2) * 360}, 100%, 64%)`)
     try {
       const playground = await import(`./../playgrounds/${slug}.js`)
       return playground.hydrate(element, { ...console, log, warn, error })

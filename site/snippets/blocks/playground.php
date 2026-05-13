@@ -1,5 +1,5 @@
-<?php $slug = $block->playground() ?>
 <?php snippet('components/Playground', [
-  'slug' => $slug,
+  'slug' => $block->playground(),
+  'url' => $block->page()->toPage()?->url(),
   'caption' => $block->caption()->kirbytext()
 ]) ?>
