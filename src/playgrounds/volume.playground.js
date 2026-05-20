@@ -2,7 +2,7 @@ import Color from '/core/Color'
 
 export function hydrate (element, console) {
   const btn = element.querySelector('button.generate')
-  btn.addEventListener('click', Color.randomize)
+  btn?.addEventListener('click', Color.randomize)
 
   for (const el of element.querySelectorAll('.scenarios > g')) {
     const svg = el.closest('svg')

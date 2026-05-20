@@ -115,9 +115,9 @@
   }
 
   .svg-volume {
-    width: auto;
-    height: 70%;
-    margin-left: -3.5%;
+    width: column-span(4.5);
+    height: auto;
+    margin-left: -6%;
 
     path {
       stroke-linecap: round;

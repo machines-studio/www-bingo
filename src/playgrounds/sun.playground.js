@@ -1,4 +1,5 @@
 import Color from '/core/Color'
+import * as VolumePlayground from '/playgrounds/volume.playground'
 import { map, normalize } from 'missing-math'
 import chroma from 'chroma-js'
 
@@ -6,6 +7,8 @@ const NIGHT_TRANSITION_WIDTH = 1 // hours
 const smooth = t => t * t * (3 - 2 * t)
 
 export function hydrate (element, console) {
+  VolumePlayground.hydrate(element, console)
+
   const input = element.querySelector('input[type="range"]')
 
   input.value = new Date().getHours()
