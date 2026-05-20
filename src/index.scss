@@ -84,6 +84,11 @@
   }
 }
 
+.no-transition {
+  --easing: 0ms;
+  --easing-slow: 0ms;
+}
+
 @keyframes fade-in {
   from { opacity: 0; transform: translateX(-1rem); }
   to { opacity: 1; }

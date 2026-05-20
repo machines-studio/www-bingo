@@ -57,7 +57,7 @@
       }
 
       a {
-        @include font('h1');
+        @include font('h2');
         text-transform: lowercase;
         &::after { content: unset; } // Disable bigger hitbox
       }
