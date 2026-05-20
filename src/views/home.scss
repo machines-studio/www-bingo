@@ -4,9 +4,9 @@ main[data-barba-namespace='home'] {
     padding-top: var(--space-3);
 
     @include mobile {
-      min-height: calc(80vh - var(--menu-height));
-      min-height: calc(80svh - var(--menu-height));
-      padding-top: 0;
+      min-height: unset;
+      padding-top: var(--space-gutter);
+      padding-bottom: var(--space-4);
     }
 
     svg {

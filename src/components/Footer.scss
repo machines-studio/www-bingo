@@ -12,6 +12,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);
+
+    @include mobile {
+      gap: var(--space-0);
+    }
   }
 
   a {
@@ -26,7 +30,6 @@
   &__text {
     text-transform: initial;
     @include mobile {
-      flex: 1;
       width: 100%;
     }
   }

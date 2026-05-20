@@ -3,8 +3,8 @@
   --playground-group-size: calc((#{column-span(6)} - var(--space-0) * 5 - var(--playground-group-size-active)) / 5);
 
   @include mobile {
-  --playground-group-size-active: #{column-span(2)};
-    --playground-group-size: calc((#{column-span(7)} - var(--space-0) * 5 - var(--playground-group-size-active)) / 5);
+    --playground-group-size-active: #{column-span(2)};
+    --playground-group-size: calc((#{column-span(8)} - var(--space-0) * 5 - var(--playground-group-size-active)) / 5);
   }
 }
 

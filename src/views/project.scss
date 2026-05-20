@@ -3,6 +3,13 @@ main[data-barba-namespace='project'] {
     @include font('h2');
   }
 
+  .article__header nav {
+    @include mobile {
+      top: 0;
+      bottom: unset;
+    }
+  }
+
   .article__content {
     margin-top: var(--space-gutter);
 

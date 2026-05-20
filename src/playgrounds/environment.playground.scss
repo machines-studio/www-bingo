@@ -25,6 +25,11 @@
     height: column-span(2);
 
     background: var(--color-page);
+
+    @include mobile {
+      width: column-span(4);
+      height: column-span(3);
+    }
   }
 
   .container:last-child::after {

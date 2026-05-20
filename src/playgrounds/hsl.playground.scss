@@ -19,11 +19,17 @@
     width: column-span(6);
 
     @include mobile {
-      width: column-span(7);
+      width: column-span(8);
     }
 
     > * {
       @include fade-in(3);
+    }
+  }
+
+  fieldset + fieldset {
+    @include mobile {
+      margin-top: var(--space-0);
     }
   }
 

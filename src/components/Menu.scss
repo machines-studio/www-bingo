@@ -6,6 +6,10 @@
   --menu-logo-text-transform: uppercase;
   --menu-logo-letter-spacing: 8%;
   --menu-logo-line-height: var(--menu-line-height);
+
+  @include mobile {
+    --menu-height: 4.2rem;
+  }
 }
 
 #toggle-menu { display: none; }

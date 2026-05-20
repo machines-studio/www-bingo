@@ -109,6 +109,13 @@
       margin-bottom: var(--space-gutter);
     }
 
+    .playground__content {
+      @include mobile {
+        margin-inline: calc(-1 * var(--space-gutter));
+        border-radius: 0;
+      }
+    }
+
     .columns:not(:first-child) header h3,
     header:not(:first-child) {
       margin-top: var(--space-3);

@@ -7,7 +7,7 @@
   --color-black: #333;
   --color-page: var(--color-black);
 
-  --fade: 0.4;
+  --fade: 0.5;
   --line: 1px;
   --line-thick: 2px;
 
@@ -76,6 +76,7 @@
     --body-font-size: 1.8rem;
     --menu-font-size: 1.4rem;
     --ui-font-size: 1.6rem;
+    --small-font-size: 1.4rem;
   }
 
   @include reduced-motion {
