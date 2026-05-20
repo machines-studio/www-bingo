@@ -37,6 +37,7 @@
     "@internet/raf": "^0.2.1",
     "@tooooools/ui": "2.0.0-alpha.1",
     "bowser": "^2.14.1",
+    "chroma-js": "^3.2.0",
     "embla-carousel": "^8.6.0",
     "embla-carousel-wheel-gestures": "^8.1.0",
     "lozad": "^1.16.0",

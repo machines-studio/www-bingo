@@ -20,6 +20,8 @@ const CURSOR_RIPPLE_SIZE_END = CURSOR_SIZE * 4
 const CURSOR_RIPPLE_LINE_WIDTH = CURSOR_SIZE * 0.5
 
 export async function hydrate (element) {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion)').matches
+
   // Load and hydrate playground code
   const playground = await (async () => {
     const slug = element.dataset.slug
@@ -37,8 +39,7 @@ export async function hydrate (element) {
   if (!playground) return
 
   // Init cursor rendering
-  // TODO disable cursor on reduced motion
-  const cursor = !IS_MOBILE && new Cursor(element)
+  const cursor = !IS_MOBILE && !reducedMotion && new Cursor(element)
 
   element.querySelector('.playground__reset')?.addEventListener('click', () => Color.reset())
 
@@ -68,7 +69,6 @@ function Cursor (element) {
   const ripples = []
 
   // Bind events
-  // TODO disable raf on mobile
   element.addEventListener('pointerdown', handlePointerDown)
   element.addEventListener('pointerup', handlePointerUp)
   element.addEventListener('mouseenter', handleMouseEnter)

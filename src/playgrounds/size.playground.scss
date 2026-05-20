@@ -16,6 +16,7 @@
 
     width: var(--playground-size-square-size);
     height: var(--playground-size-square-size);
+    cursor: pointer;
 
     background: var(--color-page, var(--color-black));
     border-radius: 100%;
@@ -55,5 +56,13 @@
 
   .generate {
     margin-top: calc(var(--playground-size-square-size) * 2 + var(--space-gutter) * 2);
+  }
+
+  .playground__reset {
+    @include easing(color);
+  }
+
+  &:has(.square.is-huge) .playground__reset {
+    color: var(--color-black);
   }
 }

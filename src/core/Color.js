@@ -3,6 +3,7 @@
  */
 
 import { $ } from '@tooooools/ui/state'
+import { randomInt } from 'missing-math'
 
 const PROP = '--color-page'
 let UPDATE = true
@@ -40,6 +41,12 @@ export default {
     $s.reset()
     $l.reset()
     setTimeout(() => document.body.style.removeProperty(PROP), 0)
+  },
+
+  randomize () {
+    $h.value = ($h + randomInt(60, 180)) % 360
+    $s.value = randomInt(75, 100)
+    $l.value = randomInt(40, 60)
   }
 }
 

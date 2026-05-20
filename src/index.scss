@@ -8,9 +8,13 @@
   --color-page: var(--color-black);
 
   --fade: 0.4;
+  --line: 1px;
+  --line-thick: 2px;
+
   --easing: 300ms;
   --easing-slow: 600ms;
-  --border: 1px solid;
+
+  --border: var(--line) solid;
   --border-radius: 0.3rem;
 
   --space-0: 1rem;
@@ -144,6 +148,8 @@
 @import '/playgrounds/hsl.l.playground';
 @import '/playgrounds/hsl.s.playground';
 @import '/playgrounds/size.playground';
+@import '/playgrounds/sun.playground';
+@import '/playgrounds/volume.playground';
 @import '/views/default';
 @import '/views/home';
 @import '/views/project';
