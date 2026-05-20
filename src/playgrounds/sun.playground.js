@@ -6,7 +6,6 @@ const NIGHT_TRANSITION_WIDTH = 1 // hours
 const smooth = t => t * t * (3 - 2 * t)
 
 export function hydrate (element, console) {
-  Color.randomize() // DEBUG
   const input = element.querySelector('input[type="range"]')
 
   input.value = new Date().getHours()
