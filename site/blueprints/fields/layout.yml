@@ -1,0 +1,26 @@
+label: Contenu
+type: layout
+
+layouts:
+  - '1/1'
+  - '2/3, 1/3'
+
+selector:
+  size: small
+  columns: 2
+
+fieldsets:
+  text:
+    label: Texte
+    type: group
+    fieldsets:
+      - heading
+      - text
+
+  media:
+    label: Media
+    type: group
+    fieldsets:
+      - image
+      - video
+      - playground

@@ -1,0 +1,7 @@
+type: structure
+
+fields:
+  label: fields/text
+  text:
+    extends: fields/writer
+    inline: true

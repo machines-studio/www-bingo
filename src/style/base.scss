@@ -1,15 +1,47 @@
 html {
   scroll-behavior: smooth;
+  scroll-padding: calc(var(--menu-height) + var(--space-gutter) - 1px);
+  scrollbar-gutter: stable;
+  min-height: 100%;
 }
 
 body {
   @include font('body');
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   color: var(--color-black);
   background: var(--color-white);
+
+  &::after {
+    @include debug-view {
+      content: '';
+
+      position: fixed;
+      inset: 0;
+
+      pointer-events: none;
+
+      background-image: linear-gradient(to right, transparent var(--space-gutter), rgba(255 0 0 / 5%) 0);
+      background-size: calc((100vw - var(--space-gutter)) / 8);
+    }
+  }
+}
+
+body > * {
+  @include easing(color);
+  color: var(--color-page);
 }
 
 main {
+  flex: 1;
   padding: var(--space-gutter);
+  margin-top: var(--menu-height);
+}
+
+::selection {
+  color: contrast-color(var(--color-page, var(--color-black)));
+  background: var(--color-page, var(--color-black));
 }
 
 a {
@@ -37,6 +69,12 @@ figure {
     height: 100%;
     object-fit: cover;
     object-position: var(--focus-x, 50%) var(--focus-y, 50%);
+    border-radius: var(--border-radius);
+  }
+
+  img[data-lazyload] {
+    @include easing(opacity, var(--easing-slow));
+    opacity: 0;
   }
 
   img[data-lazyload][data-decoded='true'] {
@@ -46,6 +84,12 @@ figure {
   img[data-photoswipe] {
     cursor: pointer;
     cursor: zoom-in;
+  }
+
+  figcaption {
+    @include font('small');
+    margin-block: var(--space-0);
+    opacity: var(--fade);
   }
 
   figcaption:empty {

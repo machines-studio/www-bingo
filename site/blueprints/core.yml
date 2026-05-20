@@ -1,0 +1,6 @@
+tabs:
+  content:
+    label: Contenu
+
+  seo: tabs/seo
+  files: tabs/files

@@ -1,10 +1,8 @@
-<link rel='icon' type='image/png' href='/assets/favicons/favicon-96x96.png' sizes='96x96' />
-<link rel='icon' type='image/svg+xml' href='/assets/favicons/favicon.svg' />
-<link rel='shortcut icon' href='/assets/favicons/favicon.ico' />
-<link rel='apple-touch-icon' sizes='180x180' href='/assets/favicons/apple-touch-icon.png' />
+<link rel='icon' href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%22-1 -1 2 2%22><circle r=%221%22 fill=%22<?= urlencode($page->color()->toHex()->or('#222')) ?>%22 /></svg>'>
+
 <meta name='apple-mobile-web-app-title' content='machines.studio' />
 <link rel='manifest' href='/assets/favicons/site.webmanifest' />
-<meta name='theme-color' content='#e4e4e4' />
+<meta name='theme-color' content='#ffffff' />
 
 <?php foreach ($kirby->languages() as $language) : ?>
   <link rel='alternate' hreflang='<?= $language->code() ?>' href='<?= $page->url($language->code()) ?>' />

@@ -1,37 +1,48 @@
 <?php
+  $symbol ??= $slots->symbol();
+  $title ??= $slots->title();
+  $subtitle ??= $slots->subtitle();
+  $nav ??= $slots->nav();
+
+  $anchor ??= 'content';
+  $content ??= $slots->content();
+  $layouts ??= new \Kirby\Cms\Layouts();
+
   $attributes ??= [];
   $attributes['class'] = 'article ' . ($attributes['class'] ?? '');
-
-  $title = $title ?? $slots->title() ?? null;
-  $cover = $cover ?? $slots->cover() ?? null;
-  $content = $content ?? $slots->content() ?? null;
-  $footer = $footer ?? $slots->footer() ?? null;
 ?>
 
 <article <?= attr($attributes) ?>>
-  <header class='article__header'>
-    <?php if ($title) : ?>
-      <h2 class='article__title'><?= $title ?></h2>
-    <?php endif ?>
-  </header>
+  <?php if (trim($title ?? '')) : ?>
+    <header class='article__header'>
+      <h2 class='article__title' <?= r($symbol, "data-symbol='$symbol'") ?>>
+        <?= $title ?>
+      </h2>
 
-  <section class='article__content'>
-    <?php snippet('html/image', [
-      'image' => $cover,
-      'lazyload' => false,
-      'preset' => 'prose',
-      'attributes' => [
-        'class' => 'article__cover'
-      ]
-    ]) ?>
-
-    <?= $content ?>
-  </section>
-
-  <?php if ($footer) : ?>
-    <footer class='article__footer'>
-      <?= $footer ?>
-    </footer>
+      <?php if ($nav) : ?>
+        <nav class='article__nav'><?= $nav ?></nav>
+      <?php endif ?>
+    </header>
   <?php endif ?>
-</article>
 
+  <?php if (trim($subtitle ?? '')) : ?>
+    <h3 class='article__subtitle'><?= $subtitle ?></h3>
+  <?php endif ?>
+
+  <section class='article__content' id='<?= $anchor ?>'>
+    <?= $content ?>
+
+    <?php foreach ($layouts as $layout) : ?>
+      <?php $columns = $layout->columns() ?>
+      <section class='columns' data-cols='<?= $columns->count() ?>'>
+        <?php foreach ($columns as $column) : ?>
+          <div class='column'>
+            <div class='blocks'>
+              <?= $column->blocks() ?>
+            </div>
+          </div>
+          <?php endforeach ?>
+      </section>
+    <?php endforeach ?>
+  </section>
+</article>

@@ -1,0 +1,68 @@
+:root {
+  --playground-size-square-size: 3rem;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.9); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(0.9); }
+}
+
+.playground[data-slug='size.playground'] {
+  .square {
+    @include easing((width, height, background, transform, border-radius));
+
+    position: absolute;
+
+    width: var(--playground-size-square-size);
+    height: var(--playground-size-square-size);
+    cursor: pointer;
+
+    background: var(--color-page, var(--color-black));
+    border-radius: 100%;
+
+    contain: layout paint;
+
+    &:not(.is-huge):hover {
+      animation: pulse var(--easing-slow) infinite;
+    }
+  }
+
+  .square.is-huge {
+    width: 100vw;
+    height: 100vw;
+    border-radius: 0;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      z-index: 1;
+      top: calc(50% - var(--playground-size-square-size) / 2);
+      left: calc(50% - var(--playground-size-square-size) / 2);
+
+      width: var(--playground-size-square-size);
+      height: var(--playground-size-square-size);
+
+      background: var(--playground-background);
+      border-radius: 100%;
+      animation: pulse calc(var(--easing-slow) * 2) infinite;
+    }
+
+    & + .generate {
+      color: var(--color-black);
+    }
+  }
+
+  .generate {
+    margin-top: calc(var(--playground-size-square-size) * 2 + var(--space-gutter) * 2);
+  }
+
+  .playground__reset {
+    @include easing(color);
+  }
+
+  &:has(.square.is-huge) .playground__reset {
+    color: var(--color-black);
+  }
+}

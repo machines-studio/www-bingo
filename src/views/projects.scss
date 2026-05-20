@@ -1,0 +1,13 @@
+main[data-barba-namespace='projects'] {
+  @include mobile {
+    padding-top: 0;
+  }
+
+  > ul li {
+    @include fade-in(10);
+
+    a:active {
+      @include fade-out;
+    }
+  }
+}

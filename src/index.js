@@ -9,11 +9,14 @@ import mediaReady from '/utils/media-ready'
 
     components: {
       // Outside barba wrapper
-      global: [],
+      global: [
+        await import('/components/Menu')
+      ],
 
       // Inside barba wrapper
       local: [
-        await import('/components/Hello'),
+        await import('/components/Gallery'),
+        await import('/components/Playground')
       ]
     },
 
@@ -26,6 +29,10 @@ import mediaReady from '/utils/media-ready'
         await mediaReady(el)
         el.classList.add('is-loaded')
       }))
+
+      // Update favicon color
+      const color = window.getComputedStyle(next.container).getPropertyValue('--color-page')
+      document.head.querySelector('link[rel="icon"]').href = `data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%22-1 -1 2 2%22><circle r=%221%22 fill=%22%23${encodeURI(color.substr(1))}%22 /></svg>`
 
       // Reset scroll position, handling url hash
       if (next?.url.hash) next.container.querySelector('#' + next.url.hash)?.scrollIntoView()

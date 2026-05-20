@@ -1,2 +1,7 @@
 fields:
-  hidden:
+  alt:
+    icon: hidden
+    label: Texte alternatif
+    extends: fields/text
+    placeholder: Un écrou blanc sur fond noir
+    help: Texte alternatif pour les personnes malvoyantes et les moteurs de recherche

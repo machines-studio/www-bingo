@@ -1,0 +1,24 @@
+name: field.blocks.heading.name
+icon: title
+wysiwyg: true
+preview: heading
+fields:
+  level:
+    label: field.blocks.heading.level
+    type: toggles
+    empty: false
+    default: "h3"
+    labels: false
+    options:
+      - value: h3
+        icon: h2
+        text: H2
+      - value: h4
+        icon: h3
+        text: H3
+
+  text:
+    label: field.blocks.heading.text
+    type: writer
+    inline: true
+    placeholder: field.blocks.heading.placeholder

@@ -1,0 +1,22 @@
+main[data-barba-namespace='home'] {
+  .splashcreen {
+    min-height: 60vh;
+    padding-top: var(--space-3);
+
+    @include mobile {
+      min-height: unset;
+      padding-top: var(--space-gutter);
+      padding-bottom: var(--space-4);
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+      pointer-events: none; // Avoid <title> tooltip
+
+      path {
+        @include fade-in(11, 50ms);
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+label: Galerie
+type: files
+empty: Aucune image sélectionnée
+
+layout: cards
+size: small
+
+image:
+  cover: true

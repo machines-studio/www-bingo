@@ -1,0 +1,167 @@
+:root {
+  --playground-height: 50vh;
+  --playground-background: #FAFAFA;
+
+  --playground-font-size: 1.6rem;
+  --playground-text-underline-offset: var(--body-text-underline-offset);
+  --playground-text-decoration-thickness: var(--body-text-decoration-thickness);
+  --playground-text-decoration-skip-ink: var(--body-text-decoration-skip-ink);
+
+  @include mobile {
+    --playground-height: 30vh;
+  }
+}
+
+.playground {
+  position: relative;
+  touch-action: none;
+
+  &__content {
+    @include no-select;
+    @include font('playground');
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-gutter);
+    min-height: var(--playground-height);
+    padding: var(--space-gutter);
+    cursor: crosshair;
+
+    background: var(--playground-background);
+    border-radius: var(--border-radius);
+
+    contain: paint layout;
+  }
+
+  &__cursor {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    @include touch {
+      display: none;
+    }
+  }
+
+  &__content > button {
+    @include easing(color);
+    @include font('ui');
+    @include hitbox(var(--space-gutter));
+
+    cursor: pointer;
+
+    color: var(--color-page);
+
+    background: unset;
+    border: unset;
+
+    text-decoration-line: underline;
+    text-underline-offset: inherit;
+    text-decoration-thickness: inherit;
+    text-decoration-color: currentcolor;
+  }
+
+  &__content > &__reset {
+    all: unset;
+
+    position: absolute;
+    z-index: 1;
+    top: var(--space-gutter);
+    right: var(--space-gutter);
+
+    animation: reset-appears var(--easing-slow) cubic-bezier(0.25, 0.1, 0.25, 1) both;
+
+    body:not([style*='--color-page:']) & {
+      display: none;
+    }
+
+    &:hover svg {
+      transform: rotate(0.5turn);
+    }
+
+    &:active svg {
+      transform: rotate(0);
+    }
+
+    svg {
+      @include easing(transform);
+      width: var(--space-gutter);
+      height: auto;
+
+      * {
+        stroke-width: 2px;
+      }
+    }
+  }
+
+  figcaption {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-gutter);
+
+    .readmore {
+      flex: 1;
+      white-space: nowrap;
+      text-decoration-line: underline;
+    }
+  }
+
+  .svg-volume {
+    width: column-span(4.5);
+    height: auto;
+    margin-left: -6%;
+
+    path {
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .axonometry {
+      @include easing(stroke);
+
+      stroke: var(--color-page, var(--color-black));
+      stroke-width: var(--line);
+      fill: none;
+      pointer-events: fill;
+      pointer-events: none;
+
+      &--contour {
+        stroke-width: var(--line-thick);
+      }
+    }
+
+    .scenarios > g {
+      path {
+        @include easing((fill, fill-opacity));
+        stroke: var(--color-page, var(--color-black));
+        stroke-dasharray: 3px 3px;
+        fill: var(--color-page);
+        fill-opacity: 0;
+        stroke-opacity: var(--fade);
+      }
+
+      &.is-active {
+        pointer-events: none;
+      }
+
+      &.is-active path {
+        fill-opacity: 0.8;
+        stroke: none;
+      }
+    }
+  }
+}
+
+@keyframes reset-appears {
+  from { opacity: 0; transform: rotate(-1turn); }
+  to { opacity: 1; }
+}

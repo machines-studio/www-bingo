@@ -5,7 +5,10 @@
     "php": ">=8.3.0",
     "getkirby/cms": "^5.0",
     "arnoson/kirby-vite": "^5.4.0",
-    "johannschopplich/kirbylog": "^1.4"
+    "johannschopplich/kirbylog": "^1.4",
+    "sylvainjule/matomo": "^2.1",
+    "distantnative/retour-for-kirby": "^5.6",
+    "hananils/kirby-colors": "^1.7"
   },
   "config": {
     "allow-plugins": {

@@ -1,0 +1,24 @@
+.contact {
+  margin-inline: var(--space-gutter);
+
+  h3 {
+    @include no-select;
+    @include font('ui');
+    opacity: var(--fade);
+
+  }
+
+  &__columns {
+    display: grid;
+    grid-template-columns: column-span(2) column-span(2);
+    gap: var(--space-gutter);
+
+    @include narrow {
+      grid-template-columns: column-span(4) column-span(4);
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+}

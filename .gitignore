@@ -28,6 +28,8 @@ site/plugins/*
 /storage/cache/*
 !/storage/cache/.gitkeep
 
+/site/logs/*
+!/site/logs/.gitkeep
 /storage/logs/*
 !/storage/logs/.gitkeep
 

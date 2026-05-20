@@ -1,0 +1,36 @@
+.footer {
+  @include no-select;
+  @include font('menu');
+
+  justify-content: space-between;
+  padding-block: var(--space-gutter);
+  margin-inline: var(--space-gutter);
+  margin-top: var(--space-gutter);
+  border-top: var(--border);
+
+  &, &__links, .flexgroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+
+    @include mobile {
+      gap: var(--space-0);
+    }
+  }
+
+  a {
+    @include easing(opacity);
+    @include hitbox(var(--space-gutter));
+  }
+
+  &__links:has(.is-active, :hover) &__link:not(:has(.is-active, :hover)) a {
+    opacity: var(--fade);
+  }
+
+  &__text {
+    text-transform: initial;
+    @include mobile {
+      width: 100%;
+    }
+  }
+}

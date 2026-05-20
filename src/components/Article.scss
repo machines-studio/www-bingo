@@ -1,19 +1,124 @@
 .article {
-  width: 80rem;
-  max-width: 75ch;
-  margin-inline: auto;
-  margin-top: 5rem;
+  margin-bottom: var(--space-4);
 
-  @include mobile {
-    width: 100%;
+  > * {
+    @include fade-in(3);
   }
 
-  &__title {
-    @include font('title');
-    margin-bottom: 1em;
+  header {
+    position: relative;
+    gap: var(--space-gutter);
+    margin-block: var(--space-gutter);
+    border-bottom: var(--border);
   }
 
-  &__footer {
+  &__header {
+    padding-bottom: var(--space-gutter);
+  }
+
+  header h2,
+  header h3 {
+    @include font('h1');
+    width: column-span(6);
+
+    @include narrow {
+      width: column-span(7);
+    }
+
+    &[data-symbol]::before {
+      @include font('h3');
+      content: attr(data-symbol);
+      display: block;
+      opacity: var(--fade);
+    }
+  }
+
+  header nav {
+    @include no-select;
+    @include font('h3');
+    position: absolute;
+    right: 0;
+    bottom: var(--space-gutter);
+
+    display: flex;
+    gap: var(--space-gutter);
+
+    font-family: sohne-trim, sans-serif;
+
+    a {
+      @include hitbox;
+      @include easing(opacity);
+      position: relative;
+    }
+
+    [disabled],
+    &:has(:hover:not([disabled])) a:not(:hover) {
+      opacity: var(--fade);
+    }
+  }
+
+  &__subtitle {
+    @include font('h3');
+    padding-bottom: var(--space-gutter);
     margin-top: var(--space-gutter);
+    border-bottom: var(--border);
+  }
+
+  &__content {
+    > *:not(:last-child) {
+      margin-bottom: var(--space-gutter);
+    }
+
+    [data-cols='1'] .prose {
+      margin-inline: auto;
+
+      @include narrow {
+        margin-inline: unset;
+      }
+    }
+
+    [data-cols='1'] figure {
+      margin-bottom: var(--space-2);
+    }
+
+    [data-cols='2'] {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-gutter);
+
+      @include narrow {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    [data-cols='2'] .prose {
+      padding-right: var(--space-gutter);
+    }
+
+    .prose {
+      max-width: 65ch;
+    }
+
+    header h3 {
+      @include font('h2');
+      margin-bottom: var(--space-gutter);
+    }
+
+    header h4 {
+      @include font('h3');
+      margin-bottom: var(--space-gutter);
+    }
+
+    .playground__content {
+      @include mobile {
+        margin-inline: calc(-1 * var(--space-gutter));
+        border-radius: 0;
+      }
+    }
+
+    .columns:not(:first-child) header h3,
+    header:not(:first-child) {
+      margin-top: var(--space-3);
+    }
   }
 }

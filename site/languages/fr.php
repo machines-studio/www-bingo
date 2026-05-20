@@ -9,6 +9,7 @@ return [
 
   // Write your custom languages variables here, and use them in your snippets using t('go.home', 'fallback')
   'translations' => [
-    'sitemap' => 'Plan du site',
+    'menu' => 'menu',
+    'contact' => 'Nous contacter'
   ]
 ];

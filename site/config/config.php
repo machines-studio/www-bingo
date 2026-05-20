@@ -43,24 +43,48 @@ return [
   ],
 
   'panel' => [
-    'menu' => function ($kirby) {
-      return [
+    'menu' => fn ($kirby) => array_merge(
+      [
+        'home' => menu($kirby, 'home')
+      ],
+
+      // Listed
+      (function () use ($kirby) {
+        $items = ['-'];
+        foreach ($kirby->site()->children()->listed() as $group) {
+          $id = $group->slug();
+          $items[$id] = menu($kirby, $id);
+        }
+        return $items;
+      })(),
+
+      // Unlisted
+      (function () use ($kirby) {
+        $items = ['-'];
+        foreach ($kirby->site()->children()->unlisted() as $group) {
+          $id = $group->slug();
+          $items[$id] = menu($kirby, $id);
+        }
+        return $items;
+      })(),
+
+      [
+        '-',
         'site' => [
-          'label' => 'Accueil',
+          'label' => 'Réglages',
+          'icon' => 'cog',
           'current' => function () : bool {
             $links = ['site'];
             $path  = Kirby\Cms\App::instance()->path();
             return Str::contains($path, 'site');
           }
         ],
-        // Add pages here if needed
-        // 'projects' => menu($kirby, 'projects'),
-        '-',
         'users',
+        'matomo',
+        'retour',
         'languages',
-        'system'
-      ];
-    }
+      ]
+    )
   ],
 
   'sitemap' => [
@@ -86,6 +110,18 @@ return [
       }
     ],
 
+    [ // Load a playground in full page
+      'pattern' => '/(:any).playground',
+      'action' => function ($id) {
+        $slug = "$id.playground";
+        return new Page([
+          'slug' => $slug,
+          'content' => option("playgrounds.$slug"),
+          'template' => 'playground'
+        ]);
+      }
+    ],
+
     [ // Quick panel access from any page by appending /panel to the url
       'pattern' => '(:all)/panel',
       'action' => function ($uid) {
@@ -95,10 +131,29 @@ return [
     ]
   ],
 
-  'ready' => fn () => [
+  'ready' => fn ($kirby) => [
     'panel' => [
       'css' => vite()->panelCss('panel.js'),
       'js' => vite()->panelJs('panel.js')
-    ]
+    ],
+
+    // Generate a list of all snippets/playgrounds/*
+    'playgrounds' => (function () use ($kirby) {
+      $root = $kirby->root('snippets') . '/playgrounds';
+      $playgrounds = [];
+
+      foreach (Dir::files($root) as $file) {
+        if (F::extension($file) === 'php') {
+          $slug = F::name($file);
+          $json = Data::read("$root/$slug.json");
+
+          $playgrounds[$slug] = [
+            'title' => $json['title'],
+            'slug' => $slug
+          ];
+        }
+      }
+      return $playgrounds;
+    })(),
   ]
 ];

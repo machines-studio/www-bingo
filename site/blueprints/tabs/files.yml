@@ -1,0 +1,5 @@
+label: Fichiers
+sections:
+  files:
+    label: Fichiers
+    info: "{{ file.niceSize }}"

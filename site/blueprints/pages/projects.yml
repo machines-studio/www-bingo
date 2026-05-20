@@ -1,0 +1,6 @@
+title: Références
+extends: pages/pages
+
+sections:
+  drafts:
+    template: project

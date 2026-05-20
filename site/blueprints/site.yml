@@ -1,5 +1,20 @@
 title: Site
+extends: core
 
-sections:
-  pages:
-    type: pages
+tabs:
+  content:
+    fields:
+      contact:
+        type: object
+        fields:
+          left:
+            label: Gauche
+            extends: fields/writer
+          right:
+            label: Droite
+            extends: fields/writer
+
+      footer:
+        label: Pied de page
+        extends: fields/writer
+        inline: true

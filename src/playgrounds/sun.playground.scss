@@ -1,0 +1,148 @@
+:root {
+  --playground-sun-cursor-height: var(--space-2);
+  --playground-sun-slider-padding: 3rem;
+  --playground-sun-track-height: var(--line-thick);
+  --playground-sun-input-height: calc(2 * var(--playground-sun-cursor-height));
+}
+
+@function lerp ($a, $b, $t) { @return calc($a + $t * ($b - $a)); }
+
+.playground[data-slug='sun.playground'] {
+  --playground-sun-progress: 0.5;
+
+  .svg-volume {
+    --color-page: var(--playground-sun-color);
+  }
+
+  &.is-night .svg-volume .axonometry {
+    stroke: hsl(
+      lerp(
+        calc(var(--playground-sun-hue)),
+        calc(var(--playground-sun-hue) - 10deg),
+        var(--playground-sun-night-progress)
+      )
+      lerp(
+        calc(var(--playground-sun-saturation)),
+        calc(var(--playground-sun-saturation) * 0.9),
+        var(--playground-sun-night-progress)
+      )
+      lerp(
+        calc(var(--playground-sun-lightness)),
+        calc(var(--playground-sun-lightness) * 0.9),
+        var(--playground-sun-night-progress)
+      )
+    );
+  }
+
+  &.is-night .svg-volume .scenarios path {
+    fill: hsl(
+      lerp(
+        calc(var(--playground-sun-hue)),
+        calc(var(--playground-sun-hue) - 10deg),
+        var(--playground-sun-night-progress)
+      )
+      lerp(
+        calc(var(--playground-sun-saturation)),
+        calc(var(--playground-sun-saturation) * 0.9),
+        var(--playground-sun-night-progress)
+      )
+      lerp(
+        calc(var(--playground-sun-lightness)),
+        calc(var(--playground-sun-lightness) * 0.9),
+        var(--playground-sun-night-progress)
+      )
+    );
+  }
+
+  fieldset {
+    position: relative;
+    width: column-span(6);
+    line-height: 0;
+
+    &::before, &::after {
+      content: '';
+
+      position: absolute;
+      top: 50%;
+
+      height: var(--playground-sun-track-height);
+
+      background: var(--color-page, var(--color-black));
+      border-radius: var(--border-radius);
+      transform: translateY(-50%);
+
+      contain: layout paint;
+    }
+
+    &::before {
+      right: calc(100% * (1 - var(--playground-sun-progress)) + var(--playground-sun-slider-padding));
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+      left: calc(100% * var(--playground-sun-progress) + var(--playground-sun-slider-padding));
+    }
+
+    .sun {
+      position: absolute;
+      top: 50%;
+      left: calc(100% * var(--playground-sun-progress));
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: var(--playground-sun-cursor-height);
+      height: var(--playground-sun-cursor-height);
+      pointer-events: none;
+
+      transform-origin: center center;
+      transform: translateX(-50%) translateY(-50%);
+
+      svg {
+        width: var(--playground-sun-cursor-height);
+        height: auto;
+        animation: playground-sun-appears var(--easing) cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      }
+    }
+
+    input[type='range'] {
+      @mixin thumb {
+        width: var(--playground-sun-cursor-height);
+        height: var(--playground-sun-cursor-height);
+        outline: 0;
+        appearance: none;
+      }
+
+      all: unset;
+      width: 100%;
+      height: calc(var(--playground-sun-cursor-height) + var(--playground-sun-slider-padding));
+      cursor: pointer;
+      opacity: 0;
+
+      &:focus { outline: none; }
+      &::-moz-range-thumb { @include thumb; }
+      &::-webkit-slider-thumb { @include thumb; }
+    }
+  }
+
+  &.is-night fieldset .sun svg {
+    animation-name: playground-moon-appears;
+  }
+
+  &:not(.is-night) fieldset .sun svg:first-child,
+  &.is-night fieldset .sun svg:last-child {
+    display: none;
+  }
+}
+
+@keyframes playground-sun-appears {
+  from { transform: translateY(30%); }
+  to { transform: none; }
+}
+
+
+@keyframes playground-moon-appears {
+  from { transform: translateY(-30%) rotate(45deg); }
+  to { transform: none; }
+}

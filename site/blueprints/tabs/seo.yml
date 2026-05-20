@@ -1,0 +1,24 @@
+label: SEO
+type: fields
+
+fields:
+  seo_cover:
+    extends: fields/thumbnail
+    required: false
+    label: Image de couverture
+    help: "Taille minimum recommandée : 1200 × 628 px"
+
+  seo_description:
+    label: Description
+    type: textarea
+    placeholder: "{{ site.seo_description }}"
+    inline: true
+    buttons: false
+    counter: true
+    maxlength: 150
+    spellcheck: true
+
+  seo_keywords:
+    label: Mots clés
+    icon: tag
+    type: tags

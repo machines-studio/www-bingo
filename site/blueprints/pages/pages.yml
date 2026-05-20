@@ -1,0 +1,10 @@
+title: Collection de pages
+icon: folder
+
+sections:
+  drafts:
+    extends: sections/drafts
+    template: article
+  pages:
+    extends: sections/pages
+    status: published
