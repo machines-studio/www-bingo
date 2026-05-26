@@ -1,0 +1,2 @@
+import{Z as n}from"./index-BYQm92wU.js";const f=".menu";function i(s){const t=Array.from(s.querySelectorAll("a")),o=document.querySelector("#toggle-menu");n.hooks.beforeLeave(()=>{o.checked=!1});for(const e of t)e.addEventListener("click",r=>{o.checked=!1});n.hooks.enter(e=>{for(const{url:r,a:l}of t.map(c=>({a:c,url:new URL(c.href)})))l.classList.toggle("is-active",e.next.url.path.startsWith(r.pathname))})}export{i as hydrate,f as selector};
+//# sourceMappingURL=Menu-CtWQVpja.js.map

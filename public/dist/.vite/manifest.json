@@ -1,0 +1,187 @@
+{
+  "_Playground-XiBBFNFu.js": {
+    "file": "assets/Playground-XiBBFNFu.js",
+    "name": "Playground",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.js"
+    ],
+    "dynamicImports": [
+      "playgrounds/environment.playground.js",
+      "playgrounds/groups.playground.js",
+      "_hsl.s.playground-B8WXVQlR.js",
+      "_hsl.s.playground-B8WXVQlR.js",
+      "_hsl.s.playground-B8WXVQlR.js",
+      "_hsl.s.playground-B8WXVQlR.js",
+      "playgrounds/size.playground.js",
+      "playgrounds/sun.playground.js",
+      "playgrounds/volume.playground.js"
+    ]
+  },
+  "_hsl.s.playground-B8WXVQlR.js": {
+    "file": "assets/hsl.s.playground-B8WXVQlR.js",
+    "name": "hsl.s.playground",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Playground-XiBBFNFu.js"
+    ]
+  },
+  "assets/poppins-bold.ttf": {
+    "file": "assets/poppins-bold-BAdAqWtB.ttf",
+    "src": "assets/poppins-bold.ttf"
+  },
+  "assets/poppins-bold.woff": {
+    "file": "assets/poppins-bold-D9eZJgbt.woff",
+    "src": "assets/poppins-bold.woff"
+  },
+  "assets/poppins-bold.woff2": {
+    "file": "assets/poppins-bold-BI3NI92t.woff2",
+    "src": "assets/poppins-bold.woff2"
+  },
+  "assets/poppins-italic.ttf": {
+    "file": "assets/poppins-italic-CAC6BcE4.ttf",
+    "src": "assets/poppins-italic.ttf"
+  },
+  "assets/poppins-italic.woff": {
+    "file": "assets/poppins-italic-CX2PTBxv.woff",
+    "src": "assets/poppins-italic.woff"
+  },
+  "assets/poppins-italic.woff2": {
+    "file": "assets/poppins-italic-dO5fng8J.woff2",
+    "src": "assets/poppins-italic.woff2"
+  },
+  "assets/poppins-regular.ttf": {
+    "file": "assets/poppins-regular-Ctb52xxm.ttf",
+    "src": "assets/poppins-regular.ttf"
+  },
+  "assets/poppins-regular.woff": {
+    "file": "assets/poppins-regular-B6DXTVO-.woff",
+    "src": "assets/poppins-regular.woff"
+  },
+  "assets/poppins-regular.woff2": {
+    "file": "assets/poppins-regular-DTjFG4G-.woff2",
+    "src": "assets/poppins-regular.woff2"
+  },
+  "assets/sohnebreit-halbfett.ttf": {
+    "file": "assets/sohnebreit-halbfett-DPOQpUpT.ttf",
+    "src": "assets/sohnebreit-halbfett.ttf"
+  },
+  "assets/sohnebreit-halbfett.woff": {
+    "file": "assets/sohnebreit-halbfett-DlxltBWA.woff",
+    "src": "assets/sohnebreit-halbfett.woff"
+  },
+  "assets/sohnebreit-halbfett.woff2": {
+    "file": "assets/sohnebreit-halbfett-wnP5Oo7l.woff2",
+    "src": "assets/sohnebreit-halbfett.woff2"
+  },
+  "components/Gallery.js": {
+    "file": "assets/Gallery-DAgzVE9w.js",
+    "name": "Gallery",
+    "src": "components/Gallery.js",
+    "isDynamicEntry": true
+  },
+  "components/Menu.js": {
+    "file": "assets/Menu-CtWQVpja.js",
+    "name": "Menu",
+    "src": "components/Menu.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.js"
+    ]
+  },
+  "index.js": {
+    "file": "assets/index-BYQm92wU.js",
+    "name": "index",
+    "src": "index.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "views/default.js",
+      "components/Menu.js",
+      "components/Gallery.js",
+      "_Playground-XiBBFNFu.js"
+    ]
+  },
+  "index.scss": {
+    "file": "assets/index-C7_bvs4m.css",
+    "src": "index.scss",
+    "isEntry": true
+  },
+  "panel.css": {
+    "file": "assets/panel-Bl1qoo4V.js",
+    "name": "panel",
+    "src": "panel.css",
+    "isEntry": true,
+    "css": [
+      "assets/panel-DLuQi3i1.css"
+    ]
+  },
+  "panel.js": {
+    "file": "assets/panel-DNzfaGxq.js",
+    "name": "panel",
+    "src": "panel.js",
+    "isEntry": true,
+    "imports": [
+      "panel.css"
+    ]
+  },
+  "playgrounds/environment.playground.js": {
+    "file": "assets/environment.playground-DeGbDbLH.js",
+    "name": "environment.playground",
+    "src": "playgrounds/environment.playground.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Playground-XiBBFNFu.js",
+      "index.js"
+    ]
+  },
+  "playgrounds/groups.playground.js": {
+    "file": "assets/groups.playground-CWDhttcd.js",
+    "name": "groups.playground",
+    "src": "playgrounds/groups.playground.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Playground-XiBBFNFu.js",
+      "index.js"
+    ]
+  },
+  "playgrounds/size.playground.js": {
+    "file": "assets/size.playground-DPfNY7tr.js",
+    "name": "size.playground",
+    "src": "playgrounds/size.playground.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Playground-XiBBFNFu.js",
+      "index.js"
+    ]
+  },
+  "playgrounds/sun.playground.js": {
+    "file": "assets/sun.playground-C9TxSWaI.js",
+    "name": "sun.playground",
+    "src": "playgrounds/sun.playground.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Playground-XiBBFNFu.js",
+      "playgrounds/volume.playground.js",
+      "index.js"
+    ]
+  },
+  "playgrounds/volume.playground.js": {
+    "file": "assets/volume.playground-r-113KkF.js",
+    "name": "volume.playground",
+    "src": "playgrounds/volume.playground.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Playground-XiBBFNFu.js",
+      "index.js"
+    ]
+  },
+  "views/default.js": {
+    "file": "assets/default-BNvSGQpl.js",
+    "name": "default",
+    "src": "views/default.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.js"
+    ]
+  }
+}
