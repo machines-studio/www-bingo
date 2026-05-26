@@ -115,10 +115,14 @@
       }
 
       all: unset;
+
       width: 100%;
       height: calc(var(--playground-sun-cursor-height) + var(--playground-sun-slider-padding));
       cursor: pointer;
+
       opacity: 0;
+
+      -webkit-tap-highlight-color: rgba(255 255 255 / 0%);
 
       &:focus { outline: none; }
       &::-moz-range-thumb { @include thumb; }

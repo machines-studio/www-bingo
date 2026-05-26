@@ -51,10 +51,14 @@
     }
 
     all: unset;
+
     width: 100%;
     height: var(--playground-hsl-slider-height);
     cursor: pointer;
+
     border-radius: var(--border-radius);
+
+    -webkit-tap-highlight-color: rgba(255 255 255 / 0%);
 
     &:focus { outline: none; }
     &::-moz-range-thumb { @include thumb; }
