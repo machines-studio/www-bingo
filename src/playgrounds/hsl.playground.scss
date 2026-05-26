@@ -2,8 +2,7 @@
   --playground-hsl-slider-height: var(--space-gutter);
 
   --playground-hsl-cursor-color: black;
-  --playground-hsl-cursor-thickness: 3px;
-  --playground-hsl-cursor-size: calc(var(--playground-hsl-slider-height) + var(--playground-hsl-cursor-thickness) * 2);
+  --playground-hsl-cursor-thickness: var(--playground-hsl-slider-height);
 
   @include mobile {
     --playground-hsl-slider-height: var(--space-2);
@@ -42,10 +41,10 @@
   input[type='range'] {
     @mixin thumb {
       width: var(--playground-hsl-cursor-thickness);
-      height: var(--playground-hsl-cursor-size);
+      height: calc(var(--playground-hsl-slider-height) + var(--line-thick) * 2);
 
-      background: var(--playground-hsl-cursor-color);
-      border: 0;
+      background: transparent;
+      border: var(--line-thick) solid var(--color-black);
       border-radius: var(--border-radius);
       outline: 0;
       appearance: none;
