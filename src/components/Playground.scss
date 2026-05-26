@@ -14,7 +14,6 @@
 
 .playground {
   position: relative;
-  touch-action: none;
 
   &__content {
     @include no-select;
