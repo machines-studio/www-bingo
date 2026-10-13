@@ -14,29 +14,30 @@ jobs:
       name: production
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Delete zero byte files
-      # Fix a known bug with OpenSSL
+    - uses: actions/checkout@v5
+    - name: Install lftp
+      run: sudo apt-get update && sudo apt-get install -y lftp
+    - name: Deploy via SFTP
+      env:
+        SFTP_SERVER: ${{ vars.FTP_SERVER }}
+        SFTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+        LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        REMOTE_DIR: ${{ vars.REMOTE_DIR }}
       run: |
-        find . -size 0c -exec rm -f {} \;
-      shell: bash
-    - uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with:
-        server: ${{ vars.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        port: 21
-        protocol: ftp
-        server-dir: ${{ vars.REMOTE_DIR }}
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
-          content/**
-          src/**
-          .*rc
-          composer.*
-          npm*
-          package.json
-          vite.config.js
-          yarn*
+        lftp -c "
+          set sftp:auto-confirm yes
+          set net:max-retries 3
+          open --env-password -u \"$SFTP_USERNAME\" sftp://$SFTP_SERVER:22
+          mirror --reverse --verbose --parallel=4 \
+            -x '(^|/)\.git' \
+            -x '(^|/)node_modules/' \
+            -x '^content/' \
+            -x '^src/' \
+            -x '^\.[^/]*rc$' \
+            -x '^composer\.' \
+            -x '^npm' \
+            -x '^package\.json$' \
+            -x '^vite\.config\.js$' \
+            -x '^yarn' \
+            ./ \"$REMOTE_DIR\"
+        "
