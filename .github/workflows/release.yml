@@ -25,8 +25,8 @@ jobs:
         server: ${{ vars.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        port: 21
-        protocol: ftps
+        port: 22
+        protocol: sftp
         server-dir: ${{ vars.REMOTE_DIR }}
         exclude: |
           **/.git*
